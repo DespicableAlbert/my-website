@@ -1,46 +1,28 @@
-/* General container styling */
+/* Full-screen container */
 .home-container {
     position: relative;
-    height: 100vh;
-    overflow: hidden;
+    height: 100vh; /* Full height of the viewport */
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    overflow: hidden;
     text-align: center;
     color: #00ffff;
     font-family: 'Courier New', Courier, monospace;
-  }
+}
 
-/* Content styling */
+/* Content wrapper */
 .content {
-    text-align: center;
-    z-index: 1;
-    color: #00ffff;
-    font-family: 'Courier New', Courier, monospace;
-  }
+    max-width: 800px; /* Optional: Limit the width for better layout */
+    margin: 0 auto; /* Center horizontally in case of extra width */
+}
 
 /* Button container */
 .button-container {
     display: flex;
     gap: 20px; /* Space between buttons */
     justify-content: center;
-}
-
-/* Button styling */
-button {
-    margin: 10px;
-    padding: 12px 30px;
-    font-size: 18px;
-    color: #ff007f;
-    background: none;
-    border: 2px solid #ff007f;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-button:hover {
-    background-color: #ff007f;
-    color: #0d0d0d;
+    margin-top: 30px; /* Add space below welcome message */
 }
 
 /* Button container - initially hidden */
@@ -60,6 +42,64 @@ button:hover {
     transition-delay: 4s; /* Match the end of typewriter animation */
 }
 
+/* Music Control Button */
+.music-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect: Neon glow with scale */
+.music-button:hover {
+    background-color: rgba(0, 0, 0, 1);
+    box-shadow: 0 0 10px #00ffff, 0 0 40px #00ffff;
+    transform: scale(1.1); /* Pulse effect */
+    color: #fff;
+}
+
+/* Optional: Active/Clicked state */
+.music-button:active {
+    transform: scale(0.9); /* Slight shrink effect on click */
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* General Button Styling */
+button {
+    margin: 20px;
+    padding: 12px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: none;
+    border: 2px solid #ff007f; /* Magenta border */
+    color: #ff007f; /* Magenta text */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Glow Effect */
+button:hover {
+    color: #0d0d0d; /* Dark text on hover */
+    background-color: #ff007f; /* Magenta fill */
+    box-shadow: 0 0 10px #ff007f, 0 0 30px #ff007f; /* Magenta glow */
+    transform: scale(1.1); /* Smooth scaling effect */
+}
+
+/* Click Feedback */
+button:active {
+    transform: scale(0.95); /* Slight shrink effect */
+    box-shadow: 0 0 5px #ff007f;
+}
+
 /* ADDED FLICKERING ANIMATION */
 @keyframes flicker {
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
@@ -70,7 +110,6 @@ button:hover {
     }
   }
   
-/* APPLIED FLICKERING EFFECT */
 /* Subtle flickering effect */
 .flicker {
     animation: flicker 2s infinite;
@@ -79,7 +118,7 @@ button:hover {
       0 0 5px #00ffff, 
       0 0 10px #00ffff, 
       0 0 15px #0d7377; /* Softer glow */
-  }
+}
 
 /* Keyframe animation for fade-in effect */
 @keyframes fadeIn {
