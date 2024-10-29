@@ -1,0 +1,15 @@
+/* Full page layout with two equal halves */
+.contact-page {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Left Half Styling */
+.left-half, .right-half {
+    flex: 1; /* Each half takes equal space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    padding: 20px;
+}

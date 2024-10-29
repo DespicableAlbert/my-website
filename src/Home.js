@@ -7,7 +7,6 @@ export default function Home() {
     const navigate = useNavigate();
     const [showAnimation, setShowAnimation] = useState(false);
     const [isReady, setIsReady] = useState(false);
-    const [showButtons, setShowButtons] = useState(false);
 
     useEffect(() => {
         const hasSeenAnimation = sessionStorage.getItem('hasSeenAnimation');
@@ -31,13 +30,9 @@ export default function Home() {
                                 autoStart: true,
                                 loop: false,
                                 delay: 50,
+                                deleteSpeed: Number.MAX_SAFE_INTEGER,
                                 cursor: '_',
                             }}
-                            onInit={(typewriter) =>
-                                typewriter.typeString("Kuang Shen's Cyberpunk World")
-                                    .callFunction(() => setShowButtons(true))
-                                    .start()
-                            }
                         />
                     ) : (
                         "Kuang Shen's Cyberpunk World"
@@ -52,6 +47,7 @@ export default function Home() {
                                 autoStart: true,
                                 loop: false,
                                 delay: 50,
+                                deleteSpeed: Number.MAX_SAFE_INTEGER,
                                 startDelay: 2500,
                                 cursor: '',
                             }}

@@ -109,7 +109,7 @@ button:active {
       opacity: 0.5;
     }
   }
-  
+
 /* Subtle flickering effect */
 .flicker {
     animation: flicker 2s infinite;

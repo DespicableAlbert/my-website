@@ -21,16 +21,6 @@ export default function Layout() {
         }
     };
 
-    useEffect(() => {
-        const audio = audioRef.current;
-        if (audio && audio.paused) {
-            audio.play().catch((error) =>
-                console.error('Audio playback blocked:', error)
-            );
-            setIsPlaying(true);
-        }
-    }, []); // Only run on component mount
-
     return (
         <div className="layout-container">
             {/* Persistent Music Button */}
