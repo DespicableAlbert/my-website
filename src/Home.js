@@ -24,6 +24,7 @@ export default function Home() {
 
     if (!isReady) return null;
 
+    console.log("Home component rendered");
     return (
         <div className="home-container">
             <div className="content">

@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import MusicButton from './components/MusicButton';
 
 export default function Layout() {
+  console.log("Layout component rendered");
   return (
     <div className="layout-container">
       {/* Persistent music button */}
