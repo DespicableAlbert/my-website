@@ -42,6 +42,12 @@
     transition-delay: 4s; /* Match the end of typewriter animation */
 }
 
+.button-container.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
 /* Music Control Button */
 .music-button {
     position: fixed;

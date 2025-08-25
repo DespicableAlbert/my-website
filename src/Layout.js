@@ -29,7 +29,11 @@ export default function Layout() {
             </button>
 
             {/* Background Music */}
-            <audio ref={audioRef} src="/bgm.mp3" loop />
+            <audio 
+                ref={audioRef} 
+                src={`${process.env.PUBLIC_URL}/bgm.mp3`} 
+                loop 
+            />
 
             {/* Render the current route */}
             <Outlet />

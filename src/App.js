@@ -7,18 +7,17 @@ import Contact from './Contact';
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                {/* Wrap all routes under the Layout */}
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="projects" element={<Projects />} />
-                    <Route path="contact" element={<Contact />} />
-                </Route>
-            </Routes>
-        </Router>
+      <Router basename="/my-website"> {/* base path */}
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </Router>
     );
-}
+  }
 
 export default App;
