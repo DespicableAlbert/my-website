@@ -1,13 +1,10 @@
 // src/components/BackButton.js
-import { useNavigate } from 'react-router-dom';
-import './BackButton.css'; // Import CSS for styling
+import CyberButton from './CyberButton';
 
 export default function BackButton() {
-  const navigate = useNavigate();
-
   return (
-    <button className="back-button" onClick={() => navigate('/')}>
+    <CyberButton to="/">
       Back to Home
-    </button>
+    </CyberButton>
   );
 }

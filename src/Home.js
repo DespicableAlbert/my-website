@@ -1,14 +1,19 @@
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react'; 
 import Typewriter from 'typewriter-effect';
+import CyberButton from './components/CyberButton'; // Import CyberButton
 import './Home.css';
 
 export default function Home() {
-    const navigate = useNavigate();
     const [showAnimation, setShowAnimation] = useState(false);
     const [isReady, setIsReady] = useState(false);
 
     useEffect(() => {
+        // Preload sounds to avoid lag on first hover/click
+        const hoverSound = new Audio(`${process.env.PUBLIC_URL}/hover.wav`);
+        const clickSound = new Audio(`${process.env.PUBLIC_URL}/click.wav`);
+        hoverSound.load();
+        clickSound.load();
+
         const hasSeenAnimation = sessionStorage.getItem('hasSeenAnimation');
         if (!hasSeenAnimation) {
             setShowAnimation(true);
@@ -26,7 +31,7 @@ export default function Home() {
                     {showAnimation ? (
                         <Typewriter
                             options={{
-                                strings: ["Kuang Shen's Cyberpunk World"],
+                                strings: ["Kuang's Cyberpunk World"],
                                 autoStart: true,
                                 loop: false,
                                 delay: 50,
@@ -35,7 +40,7 @@ export default function Home() {
                             }}
                         />
                     ) : (
-                        "Kuang Shen's Cyberpunk World"
+                        "Kuang's Cyberpunk World"
                     )}
                 </h1>
 
@@ -59,9 +64,9 @@ export default function Home() {
                 </p>
 
                 <div className={`button-container ${showAnimation ? 'fade-in' : 'visible'}`}>
-                    <button onClick={() => navigate('/about')}>About Me</button>
-                    <button onClick={() => navigate('/projects')}>My Projects</button>
-                    <button onClick={() => navigate('/contact')}>Contact</button>
+                    <CyberButton to="/about">About Me</CyberButton>
+                    <CyberButton to="/projects">My Projects</CyberButton>
+                    <CyberButton to="/contact">Contact</CyberButton>
                 </div>
             </div>
         </div>

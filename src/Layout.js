@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'; // Used to render nested routes
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 // import './Layout.css'; // Add your styling here
 
 export default function Layout() {

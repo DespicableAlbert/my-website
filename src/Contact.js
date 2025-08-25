@@ -4,7 +4,7 @@ export default function Contact() {
     return (
       <div style={{ textAlign: 'center', padding: '50px' }}>
         <h1 className="flicker">Get in Touch</h1>
-        <p>Email: kuangs@andrew.cmu.edu</p>
+        <p>Email: kuangshenalbert@gmail.com</p>
         <BackButton />
       </div>
     );
