@@ -19,11 +19,13 @@
 
 /* Button container */
 .button-container {
+    position: relative;  /* or absolute if you want fixed location */
+    z-index: 10;         /* ensures buttons appear above animated background */
     display: flex;
-    gap: 20px; /* Space between buttons */
+    gap: 20px;
     justify-content: center;
-    margin-top: 30px; /* Add space below welcome message */
-}
+    margin-top: 30px;
+  }
 
 /* Button container - initially hidden */
 .button-container.hidden {
