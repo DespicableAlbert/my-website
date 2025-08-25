@@ -1,42 +1,15 @@
-import { Outlet } from 'react-router-dom'; // Used to render nested routes
-import { useRef, useState } from 'react';
-// import './Layout.css'; // Add your styling here
+// src/Layout.js
+import { Outlet } from 'react-router-dom';
+import MusicButton from './components/MusicButton';
 
 export default function Layout() {
-    const audioRef = useRef(null); // Audio element ref
-    const [isPlaying, setIsPlaying] = useState(false); // Track play/pause state
-
-    const toggleAudio = () => {
-        const audio = audioRef.current;
-        if (audio) {
-            if (isPlaying) {
-                audio.pause();
-                setIsPlaying(false);
-            } else {
-                audio.play().catch((error) => {
-                    console.error('Audio playback blocked:', error);
-                });
-                setIsPlaying(true);
-            }
-        }
-    };
-
-    return (
-        <div className="layout-container">
-            {/* Persistent Music Button */}
-            <button className="music-button" onClick={toggleAudio}>
-                {isPlaying ? 'Pause Music' : 'Play Music'}
-            </button>
-
-            {/* Background Music */}
-            <audio 
-                ref={audioRef} 
-                src={`${process.env.PUBLIC_URL}/bgm.mp3`} 
-                loop 
-            />
-
-            {/* Render the current route */}
-            <Outlet />
-        </div>
-    );
+  return (
+    <div className="layout-container">
+      {/* Persistent music button */}
+      <MusicButton audioSrc={`${process.env.PUBLIC_URL}/bgm.mp3`} />
+      
+      {/* Nested routes */}
+      <Outlet />
+    </div>
+  );
 }

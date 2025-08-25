@@ -3,8 +3,8 @@ import CyberButton from './CyberButton';
 
 export default function BackButton() {
   return (
-    <CyberButton to="/">
-      Back to Home
+    <CyberButton to="../">
+      Back
     </CyberButton>
   );
 }
