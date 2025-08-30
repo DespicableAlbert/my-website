@@ -1,1 +1,1 @@
-npm start
+https://despicablealbert.github.io/my-website/
