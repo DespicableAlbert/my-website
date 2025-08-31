@@ -121,11 +121,11 @@ button:active {
 /* Subtle flickering effect */
 .flicker {
     animation: flicker 2s infinite;
-    color: #00ffff; /* Neon blue */
+    color: currentColor; /* Use the color from the element itself */
     text-shadow: 
-      0 0 5px #00ffff, 
-      0 0 10px #00ffff, 
-      0 0 15px #0d7377; /* Softer glow */
+      0 0 5px currentColor, 
+      0 0 10px currentColor, 
+      0 0 15px currentColor; /* Softer glow */
 }
 
 /* Keyframe animation for fade-in effect */

@@ -14,17 +14,15 @@ export default function Home() {
         hoverSound.load();
         clickSound.load();
 
-        const hasSeenAnimation = sessionStorage.getItem('hasSeenAnimation');
-        if (!hasSeenAnimation) {
-            setShowAnimation(true);
-            sessionStorage.setItem('hasSeenAnimation', 'true');
-        }
+        // Always show typewriter animation
+        setShowAnimation(true);
+
+        // Small delay to ensure component is ready
         setTimeout(() => setIsReady(true), 50);
     }, []);
 
     if (!isReady) return null;
 
-    console.log("Home component rendered");
     return (
         <div className="home-container">
             <div className="content">
@@ -45,7 +43,8 @@ export default function Home() {
                     )}
                 </h1>
 
-                <p className="sub-caption">
+                {/* English line in neon yellow with flicker */}
+                <p className="sub-caption flicker" style={{ color: '#ffff00' }}>
                     {showAnimation ? (
                         <Typewriter
                             options={{
@@ -57,10 +56,28 @@ export default function Home() {
                                 startDelay: 2500,
                                 cursor: '',
                             }}
-                            onInit={(typewriter) => typewriter.start()}
                         />
                     ) : (
                         "Explore AI, software engineering, and neon dreams."
+                    )}
+                </p>
+
+                {/* Japanese line in neon pink with flicker */}
+                <p className="sub-caption flicker" style={{ color: '#ff00ff' }}>
+                    {showAnimation ? (
+                        <Typewriter
+                            options={{
+                                strings: ["AI、ソフトウェアエンジニアリング、そしてネオンドリームを探求する。"],
+                                autoStart: true,
+                                loop: false,
+                                delay: 50,
+                                deleteSpeed: Number.MAX_SAFE_INTEGER,
+                                startDelay: 3500, // slight delay after English line
+                                cursor: '',
+                            }}
+                        />
+                    ) : (
+                        "AI、ソフトウェアエンジニアリング、そしてネオンドリームを探求する。"
                     )}
                 </p>
 
