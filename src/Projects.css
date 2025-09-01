@@ -1,0 +1,40 @@
+.projects-container {
+    text-align: center;
+    padding: 50px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+}
+  
+.projects-scroll {
+    flex: 1;
+    overflow-y: auto;
+    text-align: left;
+    width: 100%;   /* full width */
+    padding: 0 40px; /* add padding for breathing room */
+}
+  
+.project-card {
+    margin-bottom: 40px;
+}
+  
+.tech-tags {
+    margin-bottom: 10px;
+}
+  
+.tech-tag {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    overflow: visible;
+}
+  
+.projects-footer {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 50px;
+}

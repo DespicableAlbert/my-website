@@ -1,0 +1,8 @@
+.back-button {
+    position: fixed;
+    bottom: 5vh;        /* 5% of viewport height from bottom */
+    left: 50%;          /* start from horizontal center */
+    transform: translateX(-50%); /* truly center it */
+    z-index: 100;       /* make sure it's on top */
+    padding: 1.5vh 3vw; /* responsive padding */
+}

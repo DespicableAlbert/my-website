@@ -1,125 +1,60 @@
+// src/Contact.js
 import BackButton from './components/BackButton';
 import CyberButton from './components/CyberButton';
+import './Contact.css';
 
 export default function Contact() {
   return (
-    <div
-      style={{
-        textAlign: 'center',
-        padding: '50px',
-        color: '#0ff',
-        fontFamily: '"Courier New", Courier, monospace',
-      }}
-    >
+    <div className="contact-page">
       <h1 className="flicker">Get in Touch</h1>
-
       <p className="intro">
         Welcome to the digital frontier — where ideas flicker and connections ignite.
       </p>
 
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '50px',
-        }}
-      >
-        {/* Option 1: Email directly */}
-        <div
-          className="cyber-glow"
-          style={{
-            flex: '1 1 300px',
-            maxWidth: '400px',
-            padding: '30px',
-            borderRadius: '12px',
-            textAlign: 'center',
-            backgroundColor: 'transparent',
-          }}
-        >
-          <h2 style={{ marginBottom: '20px', textShadow: '0 0 8px #0ff' }}>Email Me</h2>
-          <p style={{ marginBottom: '20px' }}>Reach me directly at:</p>
-          <p style={{ fontWeight: 'bold', fontSize: '16px', textShadow: '0 0 6px #0ff' }}>
+      <div className="contact-grid">
+        {/* Left Panel: Email */}
+        <div className="right-panel">
+          <h2>Email Me</h2>
+          <p>Reach me directly at:</p>
+          <p
+            style={{
+              fontWeight: 'bold',
+              fontSize: '16px',
+              color: '#a6ff00',
+              textShadow: '0 0 8px #a6ff00, 0 0 16px #d4ff66',
+            }}
+          >
             kuangshenalbert@gmail.com
           </p>
         </div>
 
-        {/* Option 2: Leave a note */}
-        <div
-          className="cyber-glow"
-          style={{
-            flex: '1 1 300px',
-            maxWidth: '400px',
-            padding: '30px',
-            borderRadius: '12px',
-            textAlign: 'center',
-            backgroundColor: 'transparent',
-          }}
-        >
-          <h2 style={{ marginBottom: '20px', textShadow: '0 0 8px #0ff' }}>Leave a Note</h2>
+        {/* Right Panel: Contact Form */}
+        <div className="left-panel">
+          <h2>Leave a Note</h2>
           <form
+            className="contact-form"
             action="https://formspree.io/f/xeolkegj"
             method="POST"
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
-            {['name', 'email'].map((field) => (
-              <input
-                key={field}
-                type={field === 'email' ? 'email' : 'text'}
-                name={field}
-                placeholder={field === 'email' ? 'Your Email' : 'Your Name'}
-                required
-                style={{
-                  width: '100%',
-                  marginBottom: '15px',
-                  padding: '12px',
-                  fontSize: '16px',
-                  backgroundColor: 'transparent',
-                  border: '2px solid #0ff',
-                  borderRadius: '8px',
-                  color: '#0ff',
-                  outline: 'none',
-                  boxShadow: '0 0 8px #0ff inset, 0 0 12px #0ff',
-                  fontFamily: '"Courier New", Courier, monospace',
-                  transition: '0.3s',
-                }}
-                onFocus={(e) => {
-                  e.target.style.boxShadow = '0 0 12px #0ff inset, 0 0 20px #0ff';
-                }}
-                onBlur={(e) => {
-                  e.target.style.boxShadow = '0 0 8px #0ff inset, 0 0 12px #0ff';
-                }}
-              />
-            ))}
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
             <textarea
               name="message"
               placeholder="Your Note"
-              required
               rows="5"
-              style={{
-                width: '100%',
-                marginBottom: '15px',
-                padding: '12px',
-                fontSize: '16px',
-                backgroundColor: 'transparent',
-                border: '2px solid #0ff',
-                borderRadius: '8px',
-                color: '#0ff',
-                outline: 'none',
-                boxShadow: '0 0 8px #0ff inset, 0 0 12px #0ff',
-                fontFamily: '"Courier New", Courier, monospace',
-                transition: '0.3s',
-              }}
-              onFocus={(e) => {
-                e.target.style.boxShadow = '0 0 12px #0ff inset, 0 0 20px #0ff';
-              }}
-              onBlur={(e) => {
-                e.target.style.boxShadow = '0 0 8px #0ff inset, 0 0 12px #0ff';
-              }}
+              required
             />
-            <CyberButton>
-              Send
-            </CyberButton>
+            <CyberButton type="submit">Send</CyberButton>
           </form>
         </div>
       </div>

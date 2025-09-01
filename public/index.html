@@ -33,9 +33,9 @@
       }
 
       .video-container video {
-        width: 110%; /* slightly wider than viewport */
-        height: 110%; /* slightly taller than viewport */
-        object-fit: cover; /* fills viewport without preserving empty spaces */
+        width: 100vw;       /* full viewport width */
+        height: 100vh;      /* full viewport height */
+        object-fit: cover;   /* cover the entire area without white space */
         position: absolute;
         top: 50%;
         left: 50%;
@@ -50,6 +50,8 @@
         color: #00ffff;
         font-family: 'Courier New', Courier, monospace;
         margin-top: 20%;
+        padding: 0 10px;           /* small padding for mobile edges */
+        font-size: 1vw; /* responsive font size */
       }
     </style>
   </head>

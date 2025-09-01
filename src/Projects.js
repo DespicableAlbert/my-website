@@ -1,4 +1,5 @@
-import BackButton from './components/BackButton'; // Import the Back Button
+import './Projects.css';
+import BackButton from './components/BackButton';
 
 export default function Projects() {
   const projects = [
@@ -47,35 +48,19 @@ export default function Projects() {
   ];
 
   return (
-    <div style={{ textAlign: 'center', padding: '50px', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div className="projects-container">
       <h1 className="flicker">My Projects</h1>
       <p className="intro"> Flickering neon lines and pulsing code — dive into my digital creations. </p>
+
       {/* Scrollable section */}
-      <div style={{ 
-        flex: 1, 
-        overflowY: 'auto', 
-        textAlign: 'left', 
-        maxWidth: '1000px', 
-        margin: '20px auto', 
-        paddingRight: '10px' 
-      }}>
+      <div className="projects-scroll">
         {projects.map((proj, index) => (
-          <div key={index} style={{ marginBottom: '40px' }}>
+          <div key={index} className="project-card">
             <h2>{proj.title}</h2>
             <p className="intro">{proj.date}</p>
-            <div style={{ marginBottom: '10px' }}>
+            <div className="tech-tags">
               {proj.tech.map((t, i) => (
-                <span
-                  key={i}
-                  style={{
-                    display: 'inline-block',
-                    marginRight: '8px',
-                    marginBottom: '5px',
-                    padding: '4px 8px',
-                    borderRadius: '12px',
-                    fontSize: '0.85em'
-                  }}
-                >
+                <span key={i} className="tech-tag">
                   {t}
                 </span>
               ))}
@@ -89,7 +74,7 @@ export default function Projects() {
         ))}
       </div>
 
-      <div style={{ flexShrink: 0, textAlign: 'center', padding: '50px' }}>
+      <div className="projects-footer">
         <BackButton />
       </div>
     </div>

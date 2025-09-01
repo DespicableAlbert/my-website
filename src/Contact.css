@@ -1,15 +1,113 @@
-/* Full page layout with two equal halves */
-.contact-page {
-    display: flex;
-    height: 100vh; /* Full height of the viewport */
-}
+/* src/Contact.css */
 
-/* Left Half Styling */
-.left-half, .right-half {
-    flex: 1; /* Each half takes equal space */
+.contact-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content vertically */
-    padding: 20px;
+    padding: 5vh 2vw;
+    min-height: 100vh;
+    text-align: center;
+    color: #0ff;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Messy panels container */
+.contact-grid {
+    position: relative;
+    width: 100%;
+    height: 75vh; /* taller for bigger panels */
+    margin-top: 3vh;
+}
+
+/* Panels inherit cyber-glow effect */
+.left-panel,
+.right-panel {
+    position: absolute;
+    padding: 3vh 2vw;
+    border-radius: 1vh;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Left panel far left */
+.left-panel {
+    top: 10vh;
+    left: 22vw;       /* move it more to the right */
+    width: 40vw;     /* keep bigger width */
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+/* Right panel far right */
+.right-panel {
+    top: 25vh;
+    right: 22vw;      /* move it more to the left */
+    width: 40vw;     /* keep bigger width */
+    transform: rotate(15deg);
+    z-index: 2;
+}
+
+/* Base panel glow: bright yellow default */
+.left-panel,
+.right-panel {
+    box-shadow: 
+        0 0 1vh #ffff00 inset,  /* inner glow */
+        0 0 2vh #ffff00;        /* outer glow */
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+    /* Keep original rotation */
+    /* Example: left panel rotated -18deg, right panel 18deg */
+}
+
+/* Hover effect: maintain rotation, add scale + red glow */
+.left-panel:hover,
+.right-panel:hover {
+    box-shadow: 
+        0 0 2vh #ff0000 inset,  /* inner glow changes to red */
+        0 0 4vh #ff0000,        /* outer glow changes to red */
+        0 0 6vh #ff0000,        /* extra outer glow */
+        0 0 10vh #ff0000 inset; /* extra inner glow */
+}
+
+/* Contact form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5vh;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 75%;
+    max-width: 28vw;   /* larger inputs for bigger panels */
+    padding: 1vh 1vw;
+    border: 0.2vh solid #0ff;
+    border-radius: 0.8vh;
+    background-color: transparent;
+    color: #0ff;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.5vh;
+    outline: none;
+    box-shadow: 0 0 0.8vh #0ff inset, 0 0 1.5vh #0ff;
+    transition: box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 1.2vh #0ff inset, 0 0 2vh #0ff;
+}
+
+/* Change placeholder color for all inputs and textarea */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #ff00ff;       /* bright magenta */
+    opacity: 1;            /* ensures full color in all browsers */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.5vh;
 }

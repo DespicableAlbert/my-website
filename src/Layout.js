@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <div className="layout-container">
       {/* Persistent music button */}
-      <MusicButton audioSrc={`${process.env.PUBLIC_URL}/bgm.mp3`} />
+      <MusicButton audioSrc={`${process.env.PUBLIC_URL}/bgm2.mp3`} />
       
       {/* Nested routes */}
       <Outlet />
