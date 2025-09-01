@@ -106,7 +106,7 @@
 /* Change placeholder color for all inputs and textarea */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #ff00ff;       /* bright magenta */
+    color: #fff;
     opacity: 1;            /* ensures full color in all browsers */
     font-family: "Courier New", Courier, monospace;
     font-size: 1.5vh;
