@@ -2,15 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Kuang's Cyberpunk World</title>
 
     <style>
@@ -35,14 +27,13 @@
       .video-container video {
         width: 100vw;       /* full viewport width */
         height: 100vh;      /* full viewport height */
-        object-fit: cover;   /* cover the entire area without white space */
+        object-fit: cover;  /* cover entire area */
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
 
-      
       /* Styling for the main content */
       .content {
         position: relative;
@@ -51,8 +42,8 @@
         color: #00ffff;
         font-family: 'Courier New', Courier, monospace;
         margin-top: 20%;
-        padding: 0 10px;           /* small padding for mobile edges */
-        font-size: 1vw; /* responsive font size */
+        padding: 0 10px; /* small padding for mobile edges */
+        font-size: 1vw;  /* responsive font size */
       }
     </style>
   </head>
@@ -66,7 +57,6 @@
       </video>
     </div>
 
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>
