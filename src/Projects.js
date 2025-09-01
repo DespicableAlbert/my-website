@@ -49,8 +49,7 @@ export default function Projects() {
   return (
     <div style={{ textAlign: 'center', padding: '50px', height: '100vh', display: 'flex', flexDirection: 'column' }}>
       <h1 className="flicker">My Projects</h1>
-      <p>Here are some of my AI and software engineering projects.</p>
-
+      <p className="intro"> Flickering neon lines and pulsing code — dive into my digital creations. </p>
       {/* Scrollable section */}
       <div style={{ 
         flex: 1, 
@@ -63,7 +62,7 @@ export default function Projects() {
         {projects.map((proj, index) => (
           <div key={index} style={{ marginBottom: '40px' }}>
             <h2>{proj.title}</h2>
-            <p style={{ fontStyle: 'italic', color: 'gray' }}>{proj.date}</p>
+            <p className="intro">{proj.date}</p>
             <div style={{ marginBottom: '10px' }}>
               {proj.tech.map((t, i) => (
                 <span

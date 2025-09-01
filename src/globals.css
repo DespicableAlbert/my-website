@@ -1,0 +1,64 @@
+/* src/globals.css */
+
+/* ADDED FLICKERING ANIMATION */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+    }
+    20%, 22%, 24%, 55% {
+      opacity: 0.5;
+    }
+  }
+
+/* Subtle flickering effect */
+.flicker {
+    animation: flicker 2s infinite;
+    color: currentColor; /* Use the color from the element itself */
+    text-shadow: 
+      0 0 5px currentColor, 
+      0 0 10px currentColor, 
+      0 0 15px currentColor; /* Softer glow */
+}
+
+/* Multi-color pulsing cyber-laser */
+@keyframes cyberGlow {
+    0% {
+      border-color: #ff00ff;
+      box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff inset;
+    }
+    25% {
+      border-color: #00ffff;
+      box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff inset;
+    }
+    50% {
+      border-color: #ff007f;
+      box-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f inset;
+    }
+    75% {
+      border-color: #8a2be2;
+      box-shadow: 0 0 20px #8a2be2, 0 0 30px #8a2be2 inset;
+    }
+    100% {
+      border-color: #ff00ff;
+      box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff inset;
+    }
+}
+  
+.cyber-glow {
+    animation: cyberGlow 5s linear infinite;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    border: transparent;
+    border-radius: 12px;
+}
+
+.intro {
+    font-style: italic;
+    color: #faff00; /* cyber-yellow */
+    text-shadow: 
+    0 0 5px #faff00,
+    0 0 10px #faff00,
+    0 0 20px #faff00,
+    0 0 40px #fffa33,
+    0 0 60px #fffa33;
+    animation: flicker 1.5s infinite;
+}

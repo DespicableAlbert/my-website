@@ -11,24 +11,9 @@ export default function Contact() {
         fontFamily: '"Courier New", Courier, monospace',
       }}
     >
-      <style>
-        {`
-          @keyframes cyberGlow {
-            0% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff inset; }
-            25% { border-color: #00ffff; box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff inset; }
-            50% { border-color: #ff007f; box-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f inset; }
-            75% { border-color: #8a2be2; box-shadow: 0 0 20px #8a2be2, 0 0 40px #8a2be2 inset; }
-            100% { border-color: #ff00ff; box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff inset; }
-          }
-          .cyber-glow {
-            animation: cyberGlow 5s linear infinite;
-          }
-        `}
-      </style>
-
       <h1 className="flicker">Get in Touch</h1>
 
-      <p style={{ fontSize: '18px', marginBottom: '40px' }}>
+      <p className="intro">
         Welcome to the digital frontier — where ideas flicker and connections ignite.
       </p>
 
@@ -54,7 +39,9 @@ export default function Contact() {
         >
           <h2 style={{ marginBottom: '20px', textShadow: '0 0 8px #0ff' }}>Email Me</h2>
           <p style={{ marginBottom: '20px' }}>Reach me directly at:</p>
-          <p style={{ fontWeight: 'bold', fontSize: '16px', textShadow: '0 0 6px #0ff' }}>kuangshenalbert@gmail.com</p>
+          <p style={{ fontWeight: 'bold', fontSize: '16px', textShadow: '0 0 6px #0ff' }}>
+            kuangshenalbert@gmail.com
+          </p>
         </div>
 
         {/* Option 2: Leave a note */}
@@ -130,27 +117,7 @@ export default function Contact() {
                 e.target.style.boxShadow = '0 0 8px #0ff inset, 0 0 12px #0ff';
               }}
             />
-            <CyberButton
-              type="submit"
-              style={{
-                padding: '12px',
-                fontSize: '16px',
-                cursor: 'pointer',
-                borderRadius: '8px',
-                border: '2px solid #0ff',
-                backgroundColor: 'transparent',
-                color: '#0ff',
-                fontWeight: 'bold',
-                boxShadow: '0 0 15px #0ff, 0 0 25px #0ff',
-                transition: '0.3s',
-              }}
-              onMouseOver={(e) => {
-                e.target.style.boxShadow = '0 0 20px #0ff, 0 0 40px #0ff';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.boxShadow = '0 0 15px #0ff, 0 0 25px #0ff';
-              }}
-            >
+            <CyberButton>
               Send
             </CyberButton>
           </form>

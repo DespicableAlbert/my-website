@@ -24,7 +24,7 @@ export default function MusicButton({ audioSrc }) {
 
   return (
     <>
-      <CyberButton onClick={toggleAudio} className="music-button">
+      <CyberButton onClick={toggleAudio} className="cyber-button music-button">
         {isPlaying ? "Pause Music" : "Play Music"}
       </CyberButton>
       <audio ref={audioRef} src={audioSrc} loop />

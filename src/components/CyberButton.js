@@ -1,5 +1,5 @@
-// src/components/CyberButton.js
 import { useNavigate } from 'react-router-dom';
+import './CyberButton.css';
 
 export default function CyberButton({ to, children, className, onClick }) {
   const navigate = useNavigate();

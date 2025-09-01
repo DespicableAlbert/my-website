@@ -3,8 +3,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: radial-gradient(circle at center, #1a1a1a, #2b2b2b);
-  animation: animateGray 6s infinite alternate ease-in-out;
   font-family: 'Courier New', Courier, monospace;
   color: #00ffff;
   display: flex;
@@ -14,19 +12,6 @@ body {
   overflow: hidden;
 }
 
-/* Keyframes for animated gray gradient */
-@keyframes animateGray {
-  0% {
-    background: radial-gradient(circle at center, #1a1a1a, #2b2b2b);
-  }
-  50% {
-    background: radial-gradient(circle at center, #2b2b2b, #3c3c3c);
-  }
-  100% {
-    background: radial-gradient(circle at center, #1a1a1a, #2b2b2b);
-  }
-}
-
 /* Text Styling with Glow */
 h1, h2 {
   text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
@@ -34,67 +19,4 @@ h1, h2 {
 
 p {
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-}
-
-/* Button Styling */
-button {
-  font-family: inherit;
-  font-size: 18px;
-  padding: 12px 30px;
-  margin: 10px;
-  color: #ff007f;
-  background: none;
-  border: 2px solid #ff007f;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, #ff007f, #9d00ff, #00ffff);
-  transition: left 0.5s ease;
-  z-index: -1;
-}
-
-button:hover::before {
-  left: 0;
-}
-
-button:hover {
-  color: #0d0d0d;
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-/* Video container to ensure it doesn't overflow */
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-/* Scale down the video proportionally */
-.video-container video {
-  width: auto; /* Keep the width proportional */
-  height: 110%; /* Scale to fit the height */
-  max-width: 100%; /* Prevent the video from exceeding the screen width */
-  object-fit: contain; /* Ensure the video maintains aspect ratio */
-  transform: scale(1); /* Scale down to 90% of its original size */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1); /* Center and scale */
 }

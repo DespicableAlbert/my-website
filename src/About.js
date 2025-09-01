@@ -4,6 +4,11 @@ export default function About() {
   return (
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '50px', textAlign: 'left' }}>
       <h1 className="flicker" style={{ textAlign: 'center' }}>About Me</h1>
+
+      {/* Cyberpunk one-line intro */}
+      <p className="intro" style={{ textAlign: 'center', marginBottom: '40px' }}>
+        Hacking the neon veins of the digital city — code is my conduit.
+      </p>
       
       {/* Education */}
       <section style={{ marginBottom: '40px' }}>

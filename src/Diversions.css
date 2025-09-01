@@ -1,0 +1,83 @@
+/* src/Diversions.css */
+
+/* Container */
+.diversions-container {
+    display: flex;                /* enable flex */
+    flex-direction: column;       /* stack content vertically */
+    justify-content: center;      /* center content vertically */
+    align-items: center;          /* center horizontally */
+    min-height: 100vh;            /* full viewport height */
+    padding: 50px;
+    color: #0ff;
+}
+
+/* List of cards */
+.diversion-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;      /* center cards horizontally */
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Card panel */
+.diversion-card {
+    flex: 1 1 280px;
+    max-width: 320px;
+    padding: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.08); /* more transparent than before */
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.4s, box-shadow 0.4s;
+    transform: rotate(-1deg);
+    cursor: pointer;
+}
+
+/* Alternate tilt for variety */
+.diversion-card:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+/* Neon gradient glow behind the card */
+.diversion-card::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff007f, #8a2be2);
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.4; /* slightly dimmer glow to match more transparent cards */
+    transition: opacity 0.3s;
+}
+
+/* Glow pulse on hover */
+.diversion-card:hover::before {
+    opacity: 1;
+    filter: blur(20px);
+    animation: pulseColors 3s linear infinite;
+    transform: scale(1.05);
+}
+
+/* Keyframes for color pulse */
+@keyframes pulseColors {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Card heading */
+.diversion-card h2 {
+    margin-bottom: 15px;
+    color: #ff69f0; /* cyber-pink */
+    text-shadow: 0 0 5px #ff69f0, 0 0 10px #ff69f0;
+}
+
+/* Card text */
+.diversion-card p {
+    color: #00ffff; /* neon cyan */
+    font-size: 14px;
+    line-height: 1.5;
+    text-shadow: 0 0 3px #00ffff;
+}

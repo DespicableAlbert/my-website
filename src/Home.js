@@ -44,7 +44,7 @@ export default function Home() {
                 </h1>
 
                 {/* English line in neon yellow with flicker */}
-                <p className="sub-caption flicker" style={{ color: '#ffff00' }}>
+                <p className="flicker" style={{ color: '#ffff00', fontSize: 16 }}>
                     {showAnimation ? (
                         <Typewriter
                             options={{
@@ -63,7 +63,7 @@ export default function Home() {
                 </p>
 
                 {/* Japanese line in neon pink with flicker */}
-                <p className="sub-caption flicker" style={{ color: '#ff00ff' }}>
+                <p className="flicker" style={{ color: '#ff00ff', fontSize: 16 }}>
                     {showAnimation ? (
                         <Typewriter
                             options={{
@@ -81,10 +81,11 @@ export default function Home() {
                     )}
                 </p>
 
-                <div className={`button-container ${showAnimation ? 'fade-in' : 'visible'}`}>
+                <div className={`button-container`}>
                     <CyberButton to="/about">About Me</CyberButton>
-                    <CyberButton to="/projects">My Projects</CyberButton>
+                    <CyberButton to="/projects">Projects</CyberButton>
                     <CyberButton to="/contact">Contact</CyberButton>
+                    <CyberButton to="/diversions">Diversions</CyberButton>
                 </div>
             </div>
         </div>
