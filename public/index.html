@@ -32,17 +32,14 @@
         overflow: hidden;
       }
 
-      /* Scale down the video proportionally */
       .video-container video {
-        width: auto; /* Keep the width proportional */
-        height: 110%; /* Scale to fit the height */
-        max-width: 100%; /* Prevent the video from exceeding the screen width */
-        object-fit: contain; /* Ensure the video maintains aspect ratio */
-        transform: scale(1); /* Scale down to 100% of its original size */
+        width: 110%; /* slightly wider than viewport */
+        height: 110%; /* slightly taller than viewport */
+        object-fit: cover; /* fills viewport without preserving empty spaces */
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) scale(1); /* Center and scale */
+        transform: translate(-50%, -50%);
       }
 
       /* Styling for the main content */
