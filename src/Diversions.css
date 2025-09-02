@@ -2,11 +2,11 @@
 
 /* Container */
 .diversions-container {
-    display: flex;                /* enable flex */
-    flex-direction: column;       /* stack content vertically */
-    justify-content: center;      /* center content vertically */
-    align-items: center;          /* center horizontally */
-    min-height: 100vh;            /* full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 50px;
     color: #0ff;
 }
@@ -15,68 +15,90 @@
 .diversion-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;      /* center cards horizontally */
+    justify-content: center;
     gap: 40px;
     margin-top: 20px;
 }
 
-/* Card panel */
+/* Floating cards with tilt */
 .diversion-card {
     flex: 1 1 280px;
     max-width: 320px;
     padding: 30px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.08); /* more transparent than before */
+    background: rgba(0, 0, 0, 0.08);
     border-radius: 15px;
     position: relative;
-    transition: transform 0.4s, box-shadow 0.4s;
-    transform: rotate(-1deg);
     cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s;
+    transform-origin: center center;
+    transform: rotate(var(--tilt));
+    animation: floatCard 6s ease-in-out infinite;
 }
 
-/* Alternate tilt for variety */
+/* Natural tilt per card */
+.diversion-card:nth-child(1) { --tilt: -6deg; }
+.diversion-card:nth-child(2) { --tilt: 5deg; }
+.diversion-card:nth-child(3) { --tilt: -4deg; }
+.diversion-card:nth-child(4) { --tilt: 6deg; }
+.diversion-card:nth-child(5) { --tilt: -5deg; }
+.diversion-card:nth-child(6) { --tilt: 4deg; }
+
+/* Offset animation for even cards */
 .diversion-card:nth-child(even) {
-    transform: rotate(1deg);
+    animation-delay: 3s;
 }
 
-/* Neon gradient glow behind the card */
+/* Hover effect – keep tilt while scaling */
+.diversion-card:hover {
+    transform: scale(1.05) rotate(var(--tilt));
+}
+
+/* Cyberpunk neon tie-dye glow */
 .diversion-card::before {
     content: '';
     position: absolute;
     top: -2px; left: -2px; right: -2px; bottom: -2px;
     border-radius: 15px;
-    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff007f, #8a2be2);
+    background: radial-gradient(circle at 30% 30%, 
+        #ff00ff, #00ffff, #ff007f, #8a2be2, #00ffff, #ff69f0);
+    background-size: 1200% 1200%;
     z-index: -1;
-    filter: blur(15px);
-    opacity: 0.4; /* slightly dimmer glow to match more transparent cards */
-    transition: opacity 0.3s;
-}
-
-/* Glow pulse on hover */
-.diversion-card:hover::before {
-    opacity: 1;
     filter: blur(20px);
-    animation: pulseColors 3s linear infinite;
-    transform: scale(1.05);
+    opacity: 0.2;
+    transition: opacity 0.3s;
+    animation: cyberTieDye 30s linear infinite;
 }
 
-/* Keyframes for color pulse */
-@keyframes pulseColors {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.diversion-card:hover::before {
+    opacity: 0.6;
+    filter: blur(25px);
 }
 
-/* Card heading */
+/* Floating + tilt keyframes */
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0) rotate(var(--tilt)); }
+    50% { transform: translateY(-12px) rotate(var(--tilt)); }
+}
+
+/* Slow, linear, random cyber tie-dye movement */
+@keyframes cyberTieDye {
+    0%   { background-position: 0% 0%; }
+    25%  { background-position: 100% 50%; }
+    50%  { background-position: 50% 100%; }
+    75%  { background-position: 0% 50%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Heading & text */
 .diversion-card h2 {
     margin-bottom: 15px;
-    color: #ff69f0; /* cyber-pink */
+    color: #ff69f0;
     text-shadow: 0 0 5px #ff69f0, 0 0 10px #ff69f0;
 }
 
-/* Card text */
 .diversion-card p {
-    color: #00ffff; /* neon cyan */
+    color: #00ffff;
     font-size: 14px;
     line-height: 1.5;
     text-shadow: 0 0 3px #00ffff;

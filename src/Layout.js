@@ -8,6 +8,7 @@ const audioFiles = [
   `${process.env.PUBLIC_URL}/bgm/bgm2.mp3`,
   `${process.env.PUBLIC_URL}/bgm/bgm3.mp3`,
   `${process.env.PUBLIC_URL}/bgm/bgm4.mp3`,
+  `${process.env.PUBLIC_URL}/bgm/bgm5.mp3`,
 ];
 
 export default function Layout() {
